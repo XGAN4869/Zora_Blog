@@ -47,7 +47,6 @@ export interface GithubActivityConfig {
   description: string
   profileUrl?: string
   username?: string
-  stats: HeroStat[]
   focusAreas: string[]
 }
 
@@ -119,7 +118,6 @@ export interface SiteConfig {
   contacts: ContactItem[]
   projectCategories: ProjectCategory[]
   projects: ProjectItem[]
-  heroStats: HeroStat[]
   motto: string
   summary: string[]
   strengths: string[]

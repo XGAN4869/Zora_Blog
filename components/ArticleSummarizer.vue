@@ -617,14 +617,20 @@ function extractText(obj: any): string {
 }
 
 .summarizer-panel {
+  position: fixed;
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 0;
   width: 380px;
   height: 520px;
   background: var(--color-surface, #fff);
-  border-radius: 16px;
+  border-radius: 16px 16px 0 0;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transform: none;
 }
 
 .summarizer-header {
@@ -1138,6 +1144,29 @@ function extractText(obj: any): string {
 .slide-enter-from,
 .slide-leave-to {
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateY(20px);
+}
+
+@media (max-width: 640px) {
+  .article-summarizer {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .summarizer-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 80vh;
+    max-height: 90vh;
+    border-radius: 16px;
+  }
+
+  .slide-enter-from,
+  .slide-leave-to {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
 }
 </style>

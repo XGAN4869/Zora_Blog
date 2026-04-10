@@ -10,11 +10,6 @@ export const siteConfig: SiteConfig = {
     description: '把个人项目、前端练习和博客相关沉淀逐步汇总到 GitHub，方便在主页和简历页统一展示。',
     profileUrl: 'https://github.com/XGAN4869',
     username: 'XGAN4869',
-    stats: [
-      { label: '待公开项目', value: '3+' },
-      { label: '技术主题', value: 'Vue / TS' },
-      { label: '沉淀方向', value: '工程化' },
-    ],
     focusAreas: ['后台管理系统', '移动端业务', '组件抽象', '博客内容沉淀'],
   },
   comments: {
@@ -92,11 +87,6 @@ export const siteConfig: SiteConfig = {
       href: '/resume',
       featured: true,
     },
-  ],
-  heroStats: [
-    { label: '前端经验', value: '1 年' },
-    { label: '业务页面', value: '40+' },
-    { label: '通用组件', value: '20+' },
   ],
   motto: '把设计感、业务感和代码质量一起做扎实。',
   summary: [

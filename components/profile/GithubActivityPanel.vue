@@ -13,11 +13,13 @@ const activityGraphUrl = computed(() => {
   }
 
   const isDark = resolvedTheme.value === 'dark'
-  const textColor = isDark ? 'e5eefb' : '2f2418'
-  const lineColor = isDark ? '7dd3fc' : 'b07a46'
-  const pointColor = isDark ? 'bae6fd' : 'd4ae7b'
+  const bgColor = isDark ? '0f172a' : 'eff6ff'
+  const textColor = isDark ? 'e5eefb' : '1e3a5f'
+  const lineColor = isDark ? '60a5fa' : '3b82f6'
+  const pointColor = isDark ? '93c5fd' : '60a5fa'
+  const areaColor = isDark ? '1d4ed8' : 'bfdbfe'
 
-  return `https://github-readme-activity-graph.vercel.app/graph?username=${encodeURIComponent(githubUsername.value)}&bg_color=00000000&color=${textColor}&line=${lineColor}&point=${pointColor}&area=true&hide_border=true`
+  return `https://github-readme-activity-graph.vercel.app/graph?username=${encodeURIComponent(githubUsername.value)}&bg_color=${bgColor}&color=${textColor}&line=${lineColor}&point=${pointColor}&area=true&area_color=${areaColor}&hide_border=true`
 })
 </script>
 
@@ -32,17 +34,6 @@ const activityGraphUrl = computed(() => {
     >
       @{{ githubActivity.username }}
     </p>
-
-    <div class="hero-grid mt-6">
-      <article
-        v-for="item in githubActivity.stats"
-        :key="item.label"
-        class="hero-card surface-card"
-      >
-        <p class="hero-card__label">{{ item.label }}</p>
-        <p class="hero-card__value">{{ item.value }}</p>
-      </article>
-    </div>
 
     <div class="chip-list">
       <span
