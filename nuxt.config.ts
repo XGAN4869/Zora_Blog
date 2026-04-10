@@ -4,4 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['nuxt-windicss', '@nuxt/content', '@nuxt/eslint'],
   css: ['~/assets/styles/main.css'],
+  nitro: {
+    preset: 'vercel'
+  }
 })
