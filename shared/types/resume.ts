@@ -35,6 +35,8 @@ export interface ResumeQuoteBlock {
 export interface ResumeVersion {
   id: string
   label: string
+  period: string
+  switcherHint: string
   eyebrow: string
   pageTitle: string
   pageDescription: string

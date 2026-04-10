@@ -8,7 +8,7 @@ import {
 } from '~/shared/blog/blog-utils'
 
 const { data } = await useAsyncData('blog-posts', async () => {
-  const posts = await queryCollection('posts')
+  const posts = await queryCollection('blog')
     .all()
 
   return sortPostsByDateDesc(
@@ -41,6 +41,7 @@ useSeoMeta({
     eyebrow="Blog"
     title="博客文章"
     description="这里会集中展示文章摘要、发布时间、阅读时长与标签筛选，方便你快速浏览内容。"
+    show-back-button
   >
     <section class="blog-filter-panel surface-card">
       <div class="blog-filter-panel__header">

@@ -1,10 +1,22 @@
 ﻿import type { SiteConfig } from '../types/site'
 
 export const siteConfig: SiteConfig = {
-  siteName: '甘林涵',
-  siteTitle: '甘林涵 | 前端开发工程师',
+  siteName: 'ZORA', 
+  siteTitle: '小甘的前端开发主页',
   siteDescription: '具有工业设计背景的前端开发工程师，熟悉 Vue 生态、后台管理系统与移动端业务开发。',
   siteUrl: 'https://example.com',
+  githubActivity: {
+    title: 'GitHub 活跃度',
+    description: '把个人项目、前端练习和博客相关沉淀逐步汇总到 GitHub，方便在主页和简历页统一展示。',
+    profileUrl: 'https://github.com/XGAN4869',
+    username: 'XGAN4869',
+    stats: [
+      { label: '待公开项目', value: '3+' },
+      { label: '技术主题', value: 'Vue / TS' },
+      { label: '沉淀方向', value: '工程化' },
+    ],
+    focusAreas: ['后台管理系统', '移动端业务', '组件抽象', '博客内容沉淀'],
+  },
   comments: {
     provider: 'giscus',
     enabled: false,
@@ -34,10 +46,9 @@ export const siteConfig: SiteConfig = {
     { label: '首页', to: '/' },
     { label: '博客', to: '/blog' },
     { label: '简历', to: '/resume' },
-    { label: '关于', to: '/about' },
-    { label: '足迹', to: '/footprint' },
   ],
   socialLinks: [
+    { label: 'GitHub', href: 'https://github.com/XGAN4869' },
     { label: '邮箱', href: 'mailto:2421605030@qq.com' },
     { label: '电话', href: 'tel:15158150573' },
   ],

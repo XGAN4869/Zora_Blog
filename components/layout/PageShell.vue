@@ -4,17 +4,31 @@ withDefaults(
     eyebrow?: string
     title: string
     description?: string
+    showBackButton?: boolean
+    center?: boolean
   }>(),
   {
     eyebrow: '',
     description: '',
+    showBackButton: false,
+    center: false,
   },
 )
 </script>
 
 <template>
-  <section class="page-shell">
+  <section
+    class="page-shell"
+    :class="{ 'page-shell--center': center }"
+  >
     <div class="page-shell__inner">
+      <NuxtLink
+        v-if="showBackButton"
+        to="/"
+        class="page-shell__back"
+      >
+        ← 返回首页
+      </NuxtLink>
       <p
         v-if="eyebrow"
         class="page-shell__eyebrow"

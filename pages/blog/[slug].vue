@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import CommentsHost from '~/components/blog/CommentsHost.vue'
 import {
   formatBlogDate,
   normalizeBlogPost,
@@ -13,7 +12,7 @@ const slug = computed(() => {
 })
 
 const { data: post } = await useAsyncData(`blog-post-${slug.value}`, async () => {
-  const article = await queryCollection('posts')
+  const article = await queryCollection('blog')
     .where('slug', '=', slug.value)
     .first()
 
@@ -30,6 +29,13 @@ const { data: post } = await useAsyncData(`blog-post-${slug.value}`, async () =>
 useSeoMeta({
   title: () => post.value?.title ? `${post.value.title} | Blog` : 'Blog Detail',
   description: () => post.value?.description ?? '博客文章详情页',
+})
+
+// 获取文章纯文本内容用于 AI 总结
+const articleContent = computed(() => {
+  if (!post.value?.body) return ''
+  // 简单处理：提取文本内容
+  return JSON.stringify(post.value.body)
 })
 </script>
 
@@ -76,9 +82,15 @@ useSeoMeta({
           <ContentRenderer :value="post" />
         </div>
 
-        <CommentsHost
+        <LazyCommentsHost
+          hydrate-on-visible
           :term="post.slug"
           :title="post.title"
+        />
+
+        <LazyArticleSummarizer
+          :title="post.title"
+          :content="articleContent"
         />
       </article>
     </div>

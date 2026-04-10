@@ -42,6 +42,15 @@ export interface HeroStat {
   value: string
 }
 
+export interface GithubActivityConfig {
+  title: string
+  description: string
+  profileUrl?: string
+  username?: string
+  stats: HeroStat[]
+  focusAreas: string[]
+}
+
 export interface SkillGroup {
   title: string
   items: string[]
@@ -102,6 +111,7 @@ export interface SiteConfig {
   siteTitle: string
   siteDescription: string
   siteUrl: string
+  githubActivity: GithubActivityConfig
   comments: CommentConfig
   profile: SiteProfile
   navItems: NavItem[]
